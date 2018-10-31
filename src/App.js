@@ -29,7 +29,7 @@ class App extends Component {
       console.log("none to block");
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     APIRequest.getAll().then((res)=>{
       console.log(res);
       this.setState({places : res })
