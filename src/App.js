@@ -7,7 +7,14 @@ import Map from './Map'
 
 class App extends Component {
   state ={
-    places : []
+    places : [],
+    lat : 0 ,
+    lng : 0
+  }
+  placeOnClick=(lat,lng)=>{
+    this.setState({lat})
+    this.setState({lng})
+    console.log(lat,lng);
   }
   changeNav = ()=> {
       const main=document.getElementById("main");
@@ -39,12 +46,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SideBar changeNav={this.changeNav} places={this.state.places}/>
+        <SideBar changeNav={this.changeNav} places={this.state.places} placeOnClick={this.placeOnClick}/>
   <div id="main">
     <nav className="row">
     <div  className="black-text col s1 center" onClick={(event)=>this.changeNav()}><i className="material-icons" >dehaze</i></div>
     </nav>
-    <Map places={this.state.places}/>
+    <Map places={this.state.places} lat={this.state.lat} lng={this.state.lng}/>
   </div>
       </div>
     );
