@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import Place from './Place'
 
 class SideBar extends Component {
 	componentDidMount() {
@@ -21,10 +22,7 @@ class SideBar extends Component {
 			    <div id="scroll">
 			             <ul className="collapsible">
 			             {this.props.places.map((place)=>{
-			             	return (<li key={place.venue.id}>
-						      <div className="collapsible-header" onClick={(event)=>this.props.placeOnClick(place.venue.location.lat,place.venue.location.lng)}>{place.venue.name}</div>
-						      <div className="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-						    </li>)
+			             	return <Place  place={place} key={place.venue.id} placeOnClick={this.props.placeOnClick}/>
 			             }
 			             )}
 						  </ul>

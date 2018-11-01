@@ -65,3 +65,6 @@ canvas.mapboxgl-canvas {
 ::-webkit-scrollbar-thumb:hover {
     background:  #555; 
 }
+.collapsible-body {
+  padding: 0.5rem;
+}

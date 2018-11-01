@@ -14,7 +14,6 @@ class App extends Component {
   placeOnClick=(lat,lng)=>{
     this.setState({lat})
     this.setState({lng})
-    console.log(lat,lng);
   }
   changeNav = ()=> {
       const main=document.getElementById("main");
