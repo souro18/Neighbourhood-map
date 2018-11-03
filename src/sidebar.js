@@ -15,7 +15,7 @@ class SideBar extends Component {
 			    </div>
 			    <div className="container-fluid">
 			    	<div className="input-field col s6">
-			          <input type="text" className="validate"/>
+			          <input type="text" className="validate" onChange={e => this.props.search(e.target.value)}/>
 			          <label>Search</label>
 			        </div>
 			    </div>
