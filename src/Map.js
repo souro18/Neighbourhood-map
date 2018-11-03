@@ -5,15 +5,18 @@ class Map extends Component {
 	constructor(props){
 	    super(props);
 	    this.state = {
-	    	map : {}
-	    }
+	    	map : {},
+	    	markers :[]
+	     }
 	}
 	addMarker(places) {
+		this.state.markers.map((m)=> m.remove())  //delete current markers
 		let markers=places.map((place) => {
 			return new window.mapboxgl.Marker()
 		        	.setLngLat([place.venue.location.lng,place.venue.location.lat])
         			.addTo(this.state.map);
 		})
+		this.setState({markers})
 	}
 	flyToLocation(lng,lat) {
 		  this.state.map.flyTo({
