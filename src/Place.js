@@ -4,7 +4,7 @@ function Place(props) {
 	return (
 		<li>
 	      <div className="collapsible-header" onClick={(event)=>props.placeOnClick(props.place.venue.location.lat,props.place.venue.location.lng)}>{props.place.venue.name}</div>
-	      <div className="collapsible-body">
+	      <div className="collapsible-body grey lighten-5">
 	      	<div>Type : {props.place.venue.categories[0].name}</div>
 	      	<div>
 	      		<p>{(props.place.venue.location.address)?

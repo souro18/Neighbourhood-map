@@ -11,12 +11,12 @@ class SideBar extends Component {
 	render() {
 		return (
 			<div id="sidebar">
-			    <div className="black-text right" onClick={(event)=>this.props.changeNav()}><i className="material-icons" >close</i>
-			    </div>
-			    <div className="container-fluid">
-			    	<div className="input-field col s6">
-			          <input type="text" className="validate" onChange={e => this.props.search(e.target.value)}/>
-			          <label>Search</label>
+			    <div className="black-text right s1" onClick={(event)=>this.props.changeNav()}><i className="material-icons" >close</i>
+			    	</div>
+			    <div className="row">  
+			        <div className="input-field col s12 left">
+			          <input id="search" type="text" className="validate" onChange={e => this.props.search(e.target.value)}/>
+			          <label htmlFor="search">Search</label>
 			        </div>
 			    </div>
 			    <div id="scroll">
