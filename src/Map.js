@@ -39,7 +39,6 @@ class Map extends Component {
 		}
 	}
 	componentDidMount() {
-		let markers = [];
 		window.mapboxgl.accessToken = 'pk.eyJ1Ijoic291cm8xOCIsImEiOiJjam1ydHZuMHYwMGNjM3FtdGV4cnFueGI1In0.cWXo4x2v6BrxJ81goB2DPA';
 		var map = new window.mapboxgl.Map({
 		    container: 'map',
@@ -48,7 +47,6 @@ class Map extends Component {
 		    zoom: 11 
 		});
 		this.setState({map})
-
   }
 	
 	render() {	

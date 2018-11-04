@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import SideBar from './sidebar'
 import * as APIRequest from './APIRequest'
@@ -18,15 +18,12 @@ class App extends Component {
     this.setState({lng})
   }
   changeNav = ()=> {
-      const main=document.getElementById("main");
       const sidebar=document.getElementById("sidebar");
     if(sidebar.style.display==="block") {
       sidebar.style.display = "none";
-      console.log("block to none");
     }
     else{
       sidebar.style.display = "block";
-      console.log("none to block");
     }
   }
   search=(query) =>{
