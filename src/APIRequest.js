@@ -7,3 +7,4 @@ export const getAll = () =>
   fetch(`${url}&v=20180101&near=kolkata`, { headers })
     .then(res => res.json())
     .then(data => data.response.groups[0].items)
+    .catch( e => console.log(e))

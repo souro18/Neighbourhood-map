@@ -40,7 +40,7 @@ class App extends Component {
   componentWillMount() {
     APIRequest.getAll().then((res)=>{
       console.log(res);
-      if(res.error) {
+      if(!res || res.error) {
         this.setState({error : 1})
       }
       else {
@@ -57,7 +57,7 @@ class App extends Component {
         <div id="main">
           <nav className="row">
           <div  className="black-text col s1 center" onClick={(event)=>this.changeNav()}><i className="material-icons" >dehaze</i></div>
-          <h2 className="center black-text">{(this.state.error) ? "Data not loaded. Please check your internet Connnection": "Kolkata" }</h2>
+          <h2 className="center black-text">{(this.state.error) ? "Data not loaded.": "Kolkata" }</h2>
           </nav>
           <Map places={this.state.searchedPlaces} lat={this.state.lat} lng={this.state.lng}/>
         </div>
