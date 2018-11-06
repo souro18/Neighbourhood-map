@@ -12,9 +12,12 @@ class Map extends Component {
 	addMarker(places) {
 		this.state.markers.map((m)=> m.remove())  //delete current markers
 		let markers=places.map((place) => {
+			const popup = new window.mapboxgl.Popup()
+    				.setText(place.venue.name);
 			return new window.mapboxgl.Marker()
 		        	.setLngLat([place.venue.location.lng,place.venue.location.lat])
-        			.addTo(this.state.map);
+		        	.setPopup(popup)
+        			.addTo(this.state.map);		
 		})
 		this.setState({markers})
 	}

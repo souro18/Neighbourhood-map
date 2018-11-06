@@ -6,6 +6,8 @@ self.addEventListener('fetch', function(event) {
         return response || fetch(event.request).then(function(response) {
           cache.put(event.request, response.clone());
           return response;
+        }).catch(function() {
+          console.log("Fetch Error. No internet.");
         });
       });
     })

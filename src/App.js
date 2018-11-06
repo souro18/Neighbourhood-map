@@ -11,7 +11,8 @@ class App extends Component {
     places : [],
     lat : 0 ,
     lng : 0 ,
-    searchedPlaces :[]
+    searchedPlaces :[],
+    error : 0
   }
   placeOnClick=(lat,lng)=>{
     this.setState({lat})
@@ -39,8 +40,13 @@ class App extends Component {
   componentWillMount() {
     APIRequest.getAll().then((res)=>{
       console.log(res);
-      this.setState({places : res })
-      this.setState({searchedPlaces : res })
+      if(res.error) {
+        this.setState({error : 1})
+      }
+      else {
+        this.setState({places : res })
+        this.setState({searchedPlaces : res })
+      }
     })
     }
   render() {
@@ -51,6 +57,7 @@ class App extends Component {
         <div id="main">
           <nav className="row">
           <div  className="black-text col s1 center" onClick={(event)=>this.changeNav()}><i className="material-icons" >dehaze</i></div>
+          <h2 className="center black-text">{(this.state.error) ? "Data not loaded. Please check your internet Connnection": "Kolkata" }</h2>
           </nav>
           <Map places={this.state.searchedPlaces} lat={this.state.lat} lng={this.state.lng}/>
         </div>
