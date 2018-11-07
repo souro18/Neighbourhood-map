@@ -49,6 +49,10 @@ class Map extends Component {
 		    center: [88.3639,22.572], 
 		    zoom: 11 
 		});
+		map.on('error',function(e) {
+			console.log(e);
+		})
+		console.log(map)
 		this.setState({map})
   }
 	
