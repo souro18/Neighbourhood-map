@@ -1,4 +1,4 @@
-const url = "https://api.foursquare.com/v2/venues/explore?client_id=02TQD0SIBSMPLK1MJFCNIVVNWL5OOVOEZ2P13DVAKICFQKZU&client_secret=RRDGPDGTZ3W1CAK3AW12OQUAWYB3BWTP0NLWISACPEB40MY2&limit=40"
+const url = `https://api.foursquare.com/v2/venues/explore?client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}&limit=40`
 
 const headers = {
   'Accept': 'application/json'

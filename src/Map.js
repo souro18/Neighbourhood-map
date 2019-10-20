@@ -42,7 +42,7 @@ class Map extends Component {
 		}
 	}
 	componentDidMount() {
-		window.mapboxgl.accessToken = 'pk.eyJ1Ijoic291cm8xOCIsImEiOiJjam1ydHZuMHYwMGNjM3FtdGV4cnFueGI1In0.cWXo4x2v6BrxJ81goB2DPA';
+		window.mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 		var map = new window.mapboxgl.Map({
 		    container: 'map',
 		    style: 'mapbox://styles/mapbox/streets-v9', 

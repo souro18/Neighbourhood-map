@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^8.2.0",
     "escape-string-regexp": "^1.0.5",
     "npm": "^6.4.1",
     "react": "^16.6.0",
