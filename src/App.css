@@ -21,31 +21,42 @@ h2 {
   display: none;
   position: fixed;
   height: 100%;
-  background-color: #e2e2e2;
+  background-color: #1f2235;
   z-index: 999;
   padding: 1%;
   /*transition: all 0.5s ease-in-out;*/
 }
 
+.collapsible-card {
+  border: none;
+}
+.collapsible-header, .collapsible-body {
+  background-color: #484d6e;
+}
+
 nav {
-  background-color: #e2e2e2;
+  background-color: #1f2235;
   padding: 5px;
   z-index: 100;
   height: 10%;
+}
+
+.header {
+  height: 70px;
 }
 h4 {
   margin-top: 0;
 }
 #scroll {
-  height:88%;
+  height: calc(100% - 100px);
   overflow-y: scroll;
 }
 .map-container {
-  height: 90%;
+  height: calc(100% - 70px);
 }
 #map{
   width: 100%;
-  height: 90%;
+  height: calc(100% - 70px);
   position:fixed;
   /*top :0;*/
   bottom: 0;

@@ -2,9 +2,9 @@ import React from 'react'
 
 function Place(props) {
 	return (
-		<li>
+		<li className="collapsible-card white-text">
 	      <div className="collapsible-header" onClick={(event)=>props.placeOnClick(props.place.venue.location.lat,props.place.venue.location.lng)}>{props.place.venue.name}</div>
-	      <div className="collapsible-body grey lighten-5">
+	      <div className="collapsible-body">
 	      	<div>Type : {props.place.venue.categories[0].name}</div>
 	      	<div>
 	      		<p>{(props.place.venue.location.address)?
